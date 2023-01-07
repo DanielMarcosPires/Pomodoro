@@ -27,7 +27,7 @@ function tempo() {
         alert('Acabou o tempo!');
         btn.removeAttribute('disabled',true);
     } else if (formataRelogio(cronometro.seg) >= 0) {
-        btn.setAttribute('disabled',true)
+        
         if (formataRelogio(cronometro.seg) === formataRelogio(0) && formataRelogio(cronometro.min) > 0) {
             cronometro.min -= counter;
             cronometro.seg = 59;
@@ -40,4 +40,5 @@ btn.addEventListener('click', () => {
     let hora = document.querySelector('#hora');
     hora.innerHTML = `${formataRelogio(cronometro.min)}:${formataRelogio(cronometro.seg)}`;
     intervalo = setInterval(tempo, 1000);
+    btn.setAttribute('disabled',true)
 });
