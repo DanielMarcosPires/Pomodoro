@@ -179,6 +179,8 @@ body{
     background: linear-gradient(red,orange);
     filter: drop-shadow(0 0 50px #ff0000);
     width: var(--v);
+    max-width: 500px;
+    min-width: 0px;
     height: 100%;
     border-radius: 50%;
 }
