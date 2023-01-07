@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Catamaran:wght@600&family=Montserrat:wght@600&display=swap');
+
+// font-family: 'Barlow', sans-serif;
+
+// font-family: 'Catamaran', sans-serif;
+
+// font-family: 'Montserrat', sans-serif;
+
+@mixin relogio{
+    border-radius: 50%;
+    width: 500px;
+    height: 500px;
+}
+@mixin bordaDorelogio{
+    box-shadow: 
+    -10px -10px 2.5em 10px #1f223e,
+    20px 10px 2.5em 10px #0d0e1a,
+    // inset 0 0 0px 20px #272b50,
+    // inset 5px 5px 10px 25px #000,
+    ;
+   
+    border-radius: 50%;
+}
+@mixin fonteDorelogio($font){
+    color: #ffffffdd;
+    font-size: 100px;
+    font-family: $font, sans-serif;
+}
+@mixin fonteInfo($font){
+    color: #ffffffdd;
+    font-size:35px;
+    letter-spacing: 10px;
+    font-family: $font, sans-serif;
+}
+
+body{
+    background: #14162d;
+}
+.content{
+    position: relative;
+    text-align: center;
+    left: 30%;
+    margin: 1em 0;
+    width: 500px;
+    
+}
+.content h2{
+    @include fonteInfo(Catamaran);
+    letter-spacing:2px;
+}
+.relogio{
+    margin: 3em 0;
+    @include relogio;
+    @include bordaDorelogio();
+    overflow: hidden;
+}
+.relogio .display{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-position: center center;
+    @include bordaDorelogio();
+    width: 100%;
+    height: 100%;
+}
+.numero{
+  position: relative;
+  @include fonteDorelogio('Montserrat');
+  filter: drop-shadow(0 0 10px #000000);
+  top: 20%;
+}
+.numero::before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    width: 100px;
+    height: 5px;
+}
+.numero::after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translate(50%);
+    background: #fff;
+    width: 100px;
+    height: 5px;
+}
+.info{
+   @include fonteInfo(Barlow)
+}
+.posicao{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    left: 50%;
+    transform: translatex(-50%);
+    background: #14162d;
+    border-radius: 50%;
+    padding: 2em;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    z-index: 2;
+}
+.progresso{
+    transition: 2s;
+    background: linear-gradient(red,orange);
+    filter: drop-shadow(0 0 50px #ff0000);
+    width: var(--v);
+    height: 100%;
+    border-radius: 50%;
+}
+
