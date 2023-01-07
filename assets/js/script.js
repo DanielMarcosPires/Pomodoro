@@ -1,4 +1,11 @@
 const btn = document.querySelector('#start');
+const ticksound = document.querySelector('#tik')
+
+function sound(){
+  
+  tickSound.currentTime = 0; // Volta para o início do áudio
+  tickSound.play(); // Reproduz o áudio
+}
 
 let counter = 1;
 let intervalo;  
@@ -21,6 +28,10 @@ function tempo() {
 
     let hora = document.querySelector('#hora');
     hora.innerHTML = `${formataRelogio(cronometro.min)}:${formataRelogio(cronometro.seg)}`;
+
+    ticksound.currentTime = 0; // Volta para o início do áudio
+    ticksound.play(); 
+    ticksound.volume = 0.2;
 
     if (cronometro.min === 0 && cronometro.seg === 0) {
         clearInterval(intervalo);
