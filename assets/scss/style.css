@@ -1,12 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Catamaran:wght@600&family=Montserrat:wght@600&display=swap");
+button[disabled] {
+  opacity: 0.6;
+  background: red;
+}
+
 body {
   background: #14162d;
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
   text-align: center;
-  left: 30%;
+  left: 50%;
+  transform: translate(-50%);
   margin: 1em 0;
   width: 500px;
 }
@@ -19,6 +28,14 @@ body {
   letter-spacing: 2px;
 }
 
+@media screen and (max-width: 800px) {
+  .content {
+    transform: translate(-50);
+  }
+  .content h2 {
+    text-align: center;
+  }
+}
 .relogio {
   margin: 3em 0;
   border-radius: 50%;
@@ -128,4 +145,19 @@ body {
   padding: 5px 8px;
   font-size: 2.2em;
   width: 30%;
+}
+
+@media screen and (max-width: 800px) {
+  .relogio, .display {
+    position: relative;
+    max-width: 300px;
+    max-height: 300px;
+  }
+  .posicao {
+    max-width: 230px;
+    max-height: 230px;
+  }
+  .numero {
+    font-size: 44px;
+  }
 }/*# sourceMappingURL=style.css.map */
