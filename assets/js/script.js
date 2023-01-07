@@ -25,7 +25,9 @@ function tempo() {
     if (cronometro.min === 0 && cronometro.seg === 0) {
         clearInterval(intervalo);
         alert('Acabou o tempo!');
+        btn.removeAttribute('disabled',true);
     } else if (formataRelogio(cronometro.seg) >= 0) {
+        btn.setAttribute('disabled',true)
         if (formataRelogio(cronometro.seg) === formataRelogio(0) && formataRelogio(cronometro.min) > 0) {
             cronometro.min -= counter;
             cronometro.seg = 59;
