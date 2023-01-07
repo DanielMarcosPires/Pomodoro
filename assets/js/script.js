@@ -35,9 +35,10 @@ function tempo() {
     ticksound.volume = 0.2;
 
     if (cronometro.min === 0 && cronometro.seg === 0) {
-        clearInterval(intervalo);
-        alert('Acabou o tempo!');
         btn.removeAttribute('disabled',true);
+        cronometro.seg = 30
+        cronometro.min = 25
+        clearInterval(intervalo);
     } else if (formataRelogio(cronometro.seg) >= 0) {
         
         if (formataRelogio(cronometro.seg) === formataRelogio(0) && formataRelogio(cronometro.min) > 0) {
