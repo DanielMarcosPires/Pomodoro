@@ -32,6 +32,11 @@
     letter-spacing: 10px;
     font-family: $font, sans-serif;
 }
+@mixin resetButton(){
+    text-align: center;
+    border:none;
+    outline: none;
+}
 
 body{
     background: #14162d;
@@ -91,29 +96,49 @@ body{
     height: 5px;
 }
 .info{
-   @include fonteInfo(Barlow)
+   @include fonteInfo(Barlow);
+   border-radius: 20px;
+   text-transform: uppercase;
+   width: 200px;
+}
+.info--pausa{
+   border: solid 2px black;
 }
 .posicao{
-    position: absolute;
+    align-items: center;
+    background: #14162d;
+    box-shadow: 0 0 5px #000;
+    border-radius: 50%;
     display: flex;
+    position: absolute;
     flex-direction: column;
     justify-content: space-between;
     left: 50%;
     transform: translatex(-50%);
-    background: #14162d;
-    border-radius: 50%;
     padding: 2em;
-    width: 400px;
-    height: 400px;
     margin: 0 auto;
     z-index: 2;
+    height: 400px;
+    width: 400px;
 }
 .progresso{
-    transition: 2s;
+    transition: 0.2s;
     background: linear-gradient(red,orange);
     filter: drop-shadow(0 0 50px #ff0000);
     width: var(--v);
     height: 100%;
     border-radius: 50%;
+}
+
+.content__start{
+    @include fonteInfo(Barlow);
+    @include resetButton();
+    background: #1f223e;
+    color: #fff;
+    letter-spacing: normal;
+    border-radius: 10px;
+    padding: 5px 8px;
+    font-size: 2.2em;
+    width: 30%;
 }
 
