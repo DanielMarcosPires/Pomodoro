@@ -1,11 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Catamaran:wght@600&family=Montserrat:wght@600&display=swap');
 
+@import url('./style/nav/style.css');
+
+:root{
+    --preto:#000;
+
+    --fundo:#14162d;
+    --fundoSecundario:#1f223e;
+    --fundoEscuro:#0d0e1a;
+
+    --vermelho:red;
+    --laranja:orange;
+
+    --branco:#fff;
+    --brancoTransparente:#ffffffdd;
+}
+
 // font-family: 'Barlow', sans-serif;
 
 // font-family: 'Catamaran', sans-serif;
 
 // font-family: 'Montserrat', sans-serif;
 
+.swiper{
+    width: 100%;
+    padding: 0 2em;
+    height: 100vh;
+}
 @mixin relogio{
     border-radius: 50%;
     width: 500px;
@@ -13,21 +34,19 @@
 }
 @mixin bordaDorelogio{
     box-shadow: 
-    -10px -10px 2.5em 10px #1f223e,
-    20px 10px 2.5em 10px #0d0e1a,
-    // inset 0 0 0px 20px #272b50,
-    // inset 5px 5px 10px 25px #000,
+    -10px -10px 2.5em 10px var(--fundoSecundario),
+    20px 10px 2.5em 10px var(--fundoEscuro),
     ;
    
     border-radius: 50%;
 }
 @mixin fonteDorelogio($font){
-    color: #ffffffdd;
+    color: var(--brancoTransparente);
     font-size: 100px;
     font-family: $font, sans-serif;
 }
 @mixin fonteInfo($font){
-    color: #ffffffdd;
+    color: var(--brancoTransparente);
     font-size:35px;
     letter-spacing: 10px;
     font-family: $font, sans-serif;
@@ -37,6 +56,7 @@
     border:none;
     outline: none;
 }
+
 input[type="time"]::-webkit-clear-button {
     position: absolute;
     top: 0;
@@ -64,10 +84,10 @@ input[type="time"]::-webkit-clear-button {
   
 button[disabled]{
     opacity: 0.6;
-    background: red;
+    background: var(--vermelho);
 }
 body{
-    background: #14162d;
+    background: var(--fundo);
 }
 .content{
     display: flex;
@@ -113,12 +133,12 @@ body{
 .numero{
   position: relative;
   @include fonteDorelogio('Montserrat');
-  filter: drop-shadow(0 0 10px #000000);
+  filter: drop-shadow(0 0 10px var(--preto));
   top: 20%;
 }
 .numero input[type="time"]{
     @include resetButton();
-    color: #fff;
+    color: var(--branco);
     background: none;
     outline: none;
     border: none;
@@ -132,7 +152,7 @@ body{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    background: #fff;
+    background: var(--branco);
     width: 100px;
     height: 5px;
 }
@@ -143,7 +163,7 @@ body{
     bottom: 0;
     right: 50%;
     transform: translate(50%);
-    background: #fff;
+    background: var(--branco);
     width: 100px;
     height: 5px;
 }
@@ -155,12 +175,12 @@ body{
    width: 200px;
 }
 .info--pausa{
-   border: solid 2px black;
+   border: solid 2px var(--preto);
 }
 .posicao{
     align-items: center;
-    background: #14162d;
-    box-shadow: 0 0 5px #000;
+    background: var(--fundo);
+    box-shadow: 0 0 5px var(--preto);
     border-radius: 50%;
     display: flex;
     position: absolute;
@@ -176,8 +196,8 @@ body{
 }
 .progresso{
     transition: 0.2s;
-    background: linear-gradient(red,orange);
-    filter: drop-shadow(0 0 50px #ff0000);
+    background: linear-gradient(var(--vermelho),var(--laranja));
+    filter: drop-shadow(0 0 50px var(--vermelho));
     width: var(--v);
     max-width: 500px;
     min-width: 0px;
@@ -188,8 +208,10 @@ body{
 .content__start{
     @include fonteInfo(Barlow);
     @include resetButton();
-    background: #1f223e;
-    color: #fff;
+    background: var(--fundo);
+    box-shadow: 
+    0 0 10px 5px var(--fundoEscuro);
+    color: var(--branco);
     letter-spacing: normal;
     border-radius: 10px;
     padding: 5px 8px;
