@@ -34,7 +34,23 @@
    width: var(--valor);
    height: var(--valor);
 }
-
+@media screen and (max-width:500px) {
+    .contentNav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+    }
+    .contentNav a{
+        text-align: center;
+        width: 100%;
+    }
+    .pomodoro{
+        --valor:330px;
+   width: var(--valor);
+   height: var(--valor);
+    }
+}
 .pomodoroDisplay{
     display: flex;
     flex-direction: column;
