@@ -1,0 +1,115 @@
+.content{
+   display: inline-flex;
+   position: relative;
+   gap: 2em;
+   top: 40px;
+   flex-direction: column;
+   align-items: center;
+}
+.contentTitle{
+    color: #ffffffcc;
+    position: relative;
+    font-size: 32px;
+}
+.contentNav{
+    display: inline-block;
+    border-radius: 50px ;
+    padding: 1em 1em;
+    background: #141832;
+}
+.pomodoro{
+    box-shadow: 
+    inset 0 10px 0px 20px #0e1022aa,
+    inset 0 0 0px 20px #2b3058aa,
+    0 0 40px 10px #000;
+    overflow: hidden;
+    display: inline-flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #141832;
+    padding: 3em;
+   --valor:400px;
+   width: var(--valor);
+   height: var(--valor);
+}
+
+.pomodoroDisplay{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+}
+.pomodoroDisplay h1{
+    position: relative;
+    z-index: 2;
+}
+
+.pomodoroButton{
+    background: #f86e6f;
+    border-radius:25px ;
+    position: relative;
+    top: 10px;
+    color: #000;
+    z-index: 2;
+    letter-spacing: 10px;
+    font-size: 25px;
+    margin: 0 auto;
+    padding: 5px 0;
+    width: 150px;
+}
+.btnAtivo{
+    background: transparent;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 10px;
+    font-size: 30px;
+}
+.progressBar {
+    position: absolute;
+    background: #00000077;
+    z-index: 1;
+    border-radius: 50%;
+    stroke: #f86e6f;
+    stroke-linecap: round;
+    stroke-width: 1px;
+    stroke-dasharray: 12;
+    stroke-dashoffset:20;
+    width: 85%; /* Defina o valor adequado para o raio */
+    height: 85%; /* Defina o valor adequado para o raio */
+    transition: .2s;
+}
+
+.ativo{
+    background: #f86e6f;
+    padding: 8px;
+    border-radius: 20px;
+    color: #000;
+}
+.configModal{
+    position: fixed;
+    background: #ffffffee;
+    padding: 10px;
+    border-radius: 10px;
+    width: 90%;
+    height: 80%;
+    z-index: 20;
+}
+.configModal header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+}
+.configModal i{
+    font-size: 40px;
+}
+.configTitle{
+    text-align: center;
+    color: #000;
+}
+.disabled{
+    display: none;
+}

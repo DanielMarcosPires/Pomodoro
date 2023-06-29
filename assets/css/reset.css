@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cabin', sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    list-style: none;
+    background: transparent;
+}
+:root{
+    --orange:#f66f70;
+    --background:#1e2140;
+}
+body{
+    background: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 75vh;
+}
+.icon{
+    color: #ffffff88;
+    font-size: 35px;
+}
+h1{
+    font-size: 60px;
+    color: #ffffffcc;
+}
+a{
+    color: #ffffff88;
+    padding: 8px;
+    border-radius: 20px;
+    font-size: 20px;
+}
+input[type="number"]{
+    border: solid 1px #000;
+    width: 50px;
+}
+[alert]{
+    color: #fff;
+    background: red;
+    text-align: center;
+}
